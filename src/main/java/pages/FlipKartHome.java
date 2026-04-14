@@ -23,6 +23,7 @@ public class FlipKartHome {
 
     public void searchAnyProduct(String text){
         common.sendText(searchBar,text);
+        common.pressEnter();
     }
 
 }
