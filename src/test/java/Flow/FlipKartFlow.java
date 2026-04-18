@@ -11,18 +11,19 @@ public class FlipKartFlow
     FlipKartHome flipKartHome;
     LoginPopup loginPopup;
 
-    @BeforeMethod
-    public void ignoreLoginPopup(){
-        loginPopup.clickCancelPopup();
-    }
 
     public FlipKartFlow(WebDriver driver){
         flipKartHome = new FlipKartHome(driver);
         loginPopup = new LoginPopup(driver);
+        loginPopup.clickCancelPopup();
     }
 
     public void searchElement(){
 
         flipKartHome.searchAnyProduct("Laptop");
+    }
+
+    public void getMobileModelsName(){
+        flipKartHome.getLatestMobiles();
     }
 }

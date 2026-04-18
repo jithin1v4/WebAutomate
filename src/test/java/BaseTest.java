@@ -6,21 +6,19 @@ import utils.DriverFactory;
 
 public class BaseTest {
 
-        public ConfigReader config= new ConfigReader();
-        protected WebDriver driver;
+    public ConfigReader config = new ConfigReader();
+    protected WebDriver driver;
+    DriverFactory driverFactory = new DriverFactory();
 
-        @BeforeMethod
-        public void setup() {
-//            driver = new ChromeDriver();
-//            driver.get("https://example.com");
-            DriverFactory driverFactory = new DriverFactory();
-            driver = driverFactory.initDriver(config.getProperty("browser"));
+    @BeforeMethod
+    public void setup() {
+        driver = driverFactory.initDriver(config.getProperty("browser"));
+    }
 
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();   // ✅ IMPORTANT
         }
-
-        @AfterMethod
-        public void tearDown() {
-           // driver.quit();
-        }
-
+    }
 }

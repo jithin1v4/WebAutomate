@@ -16,4 +16,9 @@ public class FlipkartPageTest extends BaseTest{
     public void productSearchChecking(){
         flow.searchElement();
     }
+
+    @Test
+    public void showMobileNames(){
+        flow.getMobileModelsName();
+    }
 }
