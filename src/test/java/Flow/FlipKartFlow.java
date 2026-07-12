@@ -1,7 +1,6 @@
 package Flow;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeMethod;
 import pages.FlipKartHome;
 import pages.Flipkart.LoginPopup;
 
